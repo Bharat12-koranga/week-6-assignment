@@ -1,9 +1,19 @@
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Card from "../components/Card";
 import Footer from "../components/Footer";
 
 function Home() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -17,14 +27,13 @@ function Home() {
           padding: "20px",
         }}
       >
-        <Card
-          title="Card 1"
-          description="This is the first card."
-        />
-        <Card
-          title="Card 2"
-          description="This is the second card."
-        />
+        {products.map((product) => (
+          <Card
+            key={product.id}
+            title={product.name}
+            description={`Price: ₹${product.price}`}
+          />
+        ))}
       </div>
 
       <Footer />

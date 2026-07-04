@@ -33,3 +33,5 @@ npm run dev
 4. Open:
 
 http://localhost:5000/products
+
+![Schema Diagram](images/W5_SchemaDiagram_internid[TBI-26100987].png)

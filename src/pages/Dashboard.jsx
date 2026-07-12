@@ -9,6 +9,9 @@ function Dashboard() {
       <div style={{ padding: "20px" }}>
         <h1>Dashboard Page</h1>
         <p>This is the Dashboard page.</p>
+         <p>Welcome Bharat
+Email: bharat@example.com</p>
+         
       </div>
 
       <Footer />
